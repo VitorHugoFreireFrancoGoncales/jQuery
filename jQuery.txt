@@ -1,0 +1,24 @@
+SELETORES - SELECIOANDO ELEMENTOS HTML PARTE 1 
+
+SELECIONANDO ELEMENTOS POR tag - $(tag)
+SELECIONANDO ELEMENTOS POR classe - $(.classe)
+SELECIONANDO ELEMENTOS POR id - $(#id)
+
+
+$ -> Permite selecionar elementos -> Permite executar ações da biblioteca jQuery -> Permite o acesso aos recursos da biblioteca jQuery
+
+
+Sequência de execução de código e $(document).ready()
+
+Formas tradicionais com JS puro
+<body> onload="funcao()"/>
+window.load = fuction() {....}
+
+Utilizando jQuery
+$(document).ready(function() {....})
+
+Recuperando e manipulando o conteúdo interno de elementos HTML
+
+<tag attr="alguma_coisa"></tag>
+
+<tag attr="alguma_coisa"> ... conteúdo interno....</tag>

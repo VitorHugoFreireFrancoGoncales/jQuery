@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery</title>
+
+		<style>
+			#divExterna {
+				background-color: #ccc;
+				width: 80px;
+				height: 80px;
+			}
+		</style>
+
+		<script src="jquery-3.6.0.min.js"></script>
+		<script>
+			//<!--Janela Browser-->
+			//scroll()
+			//resize()
+			$(document).ready(() => {
+
+				$('#onload').html('Pagina carregada')
+
+				//scroll()
+				$(window).scroll(() =>	{
+					$('#scroll').html('Scroll acionado')
+				})
+				//resize()
+				$(window).resize(() => {
+					$('#resize').html('Página redimensionada').css('background-color', 'red')
+				})
+
+				//function / arrow
+				$('#div1').scroll(function() {
+					$(this).css('background-color', 'blue')
+				})
+
+				//<--Função de Click-->
+				//mousedown()
+				//mouseup()
+				//click()
+				//dbclick()
+				//mousemove()
+				//mouseenter()
+				//mouseleave()
+				//mouseover()
+				//mouseout()
+
+				//mousedown() pressionar o click do mouse
+				$('#btn1').mousedown(() => {
+					$('#div2').css('background-color', 'green')
+				})
+
+				//mouseup() tirar o dedo pressionado do mouse
+				$('#btn1').mouseup(() => {
+					$('#div2').css('background-color', 'brown')
+				})
+				//dbclick() dois clicks no mouse
+				$('#btn2').dblclick(() => {
+					$('#div2').css('background-color', 'grey')
+				})
+				//mousemove() captura a função quando movimenta o mouse dentro da div
+				$('#div2').mousemove((e) => {
+					$('#resultadoDiv').html('Resultado do evento sobre a div: ' + 'X: ' + e.offsetX + ' / Y: ' + e.offsetY)
+				})
+
+				/*
+				//mouseover()
+				$('#divExterna').mouseover(() =>{ 
+					$('#resultadoDiv1').html('Entrou')
+				})
+
+				//mouseenter()
+				$('#divExterna').mouseenter(() =>{ 
+					$('#resultadoDiv1').html('apertou')
+				})
+				
+				//mouseout()
+				$('#divExterna').mouseout(() => {
+					$('#resultadoDiv1').html('saiu')
+				})
+				*/
+				//mouseleave()
+				$('#divExterna').mouseleave(() => {
+					$('#resultadoDiv1').html('saiu')
+				})
+
+			})
+		</script>
+	</head>
+
+	<body>
+		
+		<div id="topo">
+			<h1>Eventos</h1>
+		</div>
+
+		<div>
+			<h3>Browser</h3>
+			<span>Onload: </span><span id="onload">?</span><br />
+			<span>Scroll: </span><span id="scroll">?</span><br />
+			<span>Resize window: </span><span id="resize">?</span>
+			<div id="div1" style="height: 100px; width: 100px; border: solid 1px; overflow-y: scroll">
+				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			</div>
+
+			<hr />
+
+			<h3>Mouse</h3>
+			<button id="btn1" type="button">Clique aqui</button>
+			<button id="btn2" type="button">Clique aqui 2x</button>
+			<div id="div2" style="background-color: red; width: 80px; height: 50px; margin-top: 10px; margin-bottom: 10px"></div>
+			<span id="resultadoDiv">Resultado do evento sobre a div</span>
+
+			<div id="divExterna"></div>
+			<span>Div Externa: </span><span id="resultadoDiv1"></span>
+			<hr />
+
+
+			<h3>Teclado</h3>
+			<span>Nome:</span>
+			<input type="text" />
+			<span>Resultado do evento sobre o input</span>
+			<hr />
+
+			<h3>Formulário</h3>
+			<form>
+				<span>Nome:</span>
+				<input type="text" />
+
+				<span>E-mail:</span>
+				<input type="text" />
+
+				<span>Motivo do contato:</span>
+				<select>
+					<option value="">-- Selecione --</option>
+					<option value="duvida">Dúvida</option>
+					<option value="sugestao">Sugestão</option>
+				</select>
+				
+				<button type="button">Enviar</button>
+			</form>
+		</div>
+	</body>
+
+</html>
